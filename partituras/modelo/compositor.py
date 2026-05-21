@@ -24,3 +24,10 @@ class ReglaTransformacion(ABC):
     @abstractmethod
     def partitura_valida(self, partitura: str) -> bool:
         pass
+
+    def encontrar_numeros_partitura(self, partitura: str):
+        return [
+            (i, c)
+            for i, c in enumerate(partitura)
+            if c.isdigit()
+        ]
