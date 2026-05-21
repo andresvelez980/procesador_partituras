@@ -31,3 +31,11 @@ class ReglaTransformacion(ABC):
             for i, c in enumerate(partitura)
             if c.isdigit()
         ]
+
+    def encontrar_caracteres_invalidos(self, partitura: str):
+
+        return [
+            (i, c)
+            for i, c in enumerate(partitura)
+            if ord(c) > 127
+        ]
